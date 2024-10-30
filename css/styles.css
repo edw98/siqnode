@@ -1,0 +1,466 @@
+/* ========== MEDIA QUERIES FOR LARGER SCREENS ========== */
+@media (min-width: 768px) {
+    .comments {
+        font-size: 1.18em; /* Increase the size for desktop */
+        padding: 1px 12px; /* Adjust padding if necessary */
+    }
+}
+
+/* ========== GLOBAL STYLES ========== */
+* {
+    box-sizing: border-box; /* Ensures padding and borders are inside total width */
+}
+body {
+    background-color: black;
+    color: #00FF00;
+    font-family: 'Roboto Mono','Consolas', 'Courier New', Courier, monospace;
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+/* ========== MAIN CONTAINER ========== */
+.container {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    max-width: auto; /* Adjust as needed */
+    margin: 0 auto;
+    width: 100%;
+    height: 100%;
+}
+
+/* ========== HEADER ========== */
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    background-color: #0a170f;
+    border-bottom: 1px solid #00FF00;
+}
+.header button {
+    background-color: black;
+    border: 1px solid #00FF00;
+    color: #00FF00;
+    padding: 10px 15px;
+    cursor: pointer;
+    font-size: 13px;
+    margin: 0 5px;
+    border-radius: 4px;
+}
+.header button:hover {
+    background-color: #00FF00;
+    color: black;
+}
+
+/* ========== CHAT AREA ========== */
+.chat-container {
+    flex: 1;
+    overflow-y: auto;
+    padding: 7px;
+}
+.chat-container::-webkit-scrollbar {
+    width: 8px;
+}
+.chat-container::-webkit-scrollbar-thumb {
+    background-color: #00FF00;
+    border-radius: 10px;
+}
+
+/* ========== COMMENT BUBBLES ========== */
+
+
+.comments {
+    display: flex;
+    flex-direction: column;
+}
+
+
+/* Green gradient */
+.comment.green {
+    background: linear-gradient(90deg, rgba(12,12,12,1) 0%, rgba(5,37,19,1) 66%, rgba(0,45,19,1) 100%);
+    border-color: #00FF00;
+}
+
+/* Cyan gradient */
+.comment.cyan {
+    background: linear-gradient(90deg, rgba(12,12,12,1) 0%, rgba(5,31,37,1) 66%, rgba(0,43,45,1) 100%);
+    border-color: #26bcc9;
+}
+
+/* Yellow gradient */
+.comment.yellow {
+    background: linear-gradient(90deg, rgba(12,12,12,1) 0%, rgba(37,37,5,1) 66%, rgba(45,45,0,1) 100%);
+    border-color: #e0cf14;
+}
+
+/* Magenta gradient */
+.comment.magenta {
+    background: linear-gradient(90deg, rgba(12,12,12,1) 0%, rgba(37,5,24,1) 66%, rgba(45,0,24,1) 100%);
+    border-color: #d60cd6;
+}
+
+/* White gradient */
+.comment.white {
+    background: linear-gradient(90deg, rgba(12,12,12,1) 0%, rgba(37,37,37,1) 66%, rgba(45,45,45,1) 100%);
+    border-color: #FFFFFF;
+}
+
+
+.comment {
+    border-radius: 10px;
+    padding: 1px 8px;
+    margin-bottom: 4px;
+    max-width: 85%;
+    word-wrap: break-word;
+    color: #fff;
+    border: 1px solid;
+    font-size: 0.8em;
+}
+
+/* Increase font size slightly for mobile devices */
+@media (max-width: 768px) {
+    .comment {
+        font-size: 0.9em; /* Increase font size slightly on mobile */
+    }
+}
+
+.comment p {
+    white-space: pre-wrap; /* Preserve line breaks and multiple spaces */
+    font-family: inherit; /* Inherit from the body to ensure consistency */
+}
+
+.comment.left {
+    align-self: flex-start;
+    border-radius: 15px 15px 15px 0px;
+}
+.comment.right {
+    align-self: flex-end;
+    border-radius: 15px 15px 0px 15px;
+}
+
+.comment.center {
+    align-self: center;
+    border-radius: 15px 15px 15px 15px; /* Optional: Apply uniform border radius for centered messages */
+    max-width: 60%; /* Optional: Adjust width for centered messages */
+    text-align: left; /* Center text within the message bubble */
+}
+
+
+.timestamp {
+    font-size: 9px;
+    color: #aaa;
+    margin-top: 1px;
+    text-align: right;
+}
+.comment.left .timestamp {
+    text-align: left;
+}
+
+/* Style for the encrypted checkmarks */
+.encrypted-check {
+    color: #41c881; /* Green color */
+    font-size: 7px; /* Match the timestamp font size */
+}
+
+
+/* ========== COLOR-SPECIFIC STYLES ========== */
+.green { border-color: #00FF00; }
+.cyan { border-color: #26bcc9; }
+.yellow { border-color: #e0cf14; }
+.magenta { border-color: #FF00FF; }
+.white { border-color: #FFFFFF; }
+
+/* ========== FOOTER & FORMS ========== */
+.footer {
+    background-color: #0a170f;
+    padding: 10px; /* Adjust padding as needed */
+    border-top: 1px solid #00FF00;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Style for the reload button with animation */
+.reload-button {
+    background-color: #00FF00; /* Green color */
+    border: 1px solid #00FF00;
+    color: black;
+    padding: 8px 15px;
+    cursor: pointer;
+    font-size: 14px;
+    border-radius: 4px;
+    margin-left: auto; /* Push the button to the far right */
+    text-shadow: 0px 1px 0px #000;
+    position: relative;
+    transition: all 0.2s ease;
+    box-shadow: inset 0 1px 0 #BFFF8F, 0 6px 0 #005500;
+}
+
+/* Hover effect for the reload button */
+.reload-button:hover {
+    background-color: black;
+    color: #00FF00;
+    box-shadow: inset 0 1px 0 #BFFF8F, 0 6px 0 #005500, 0 8px 15px rgba(0, 0, 0, 0.3);
+}
+
+/* Active state to create a pressed effect */
+.reload-button:active {
+    top: 4px; /* Pressed effect to move button down slightly */
+    background-color: #00CC00;
+    box-shadow: inset 0 1px 0 #BFFF8F, inset 0 -2px 0 #005500;
+}
+
+/* Adding an additional shadow beneath the button */
+.reload-button::after {
+    content: "";
+    height: 100%;
+    width: 100%;
+    padding: 3px;
+    position: absolute;
+    bottom: -1px;
+    left: -3px;
+    z-index: -1;
+    background-color: #003300;
+    border-radius: 4px;
+}
+
+/* Spinning circle for reload animation */
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+.loading-spinner {
+    width: 18px;
+    height: 18px;
+    border: 3px solid transparent;
+    border-top-color: black; /* Spinner color */
+    border-radius: 50%;
+    animation: spin 0.8s linear infinite;
+    display: inline-block;
+    vertical-align: middle;
+}
+
+
+.color-selection-form {
+    display: flex;
+    justify-content: left;
+    margin-bottom: 8px;
+    flex-wrap: wrap;
+}
+
+/* ========== Color Selection Buttons ========== */
+.color-button.green { background-color: #00FF00; color: #00FF00; }
+.color-button.cyan { background-color: #26bcc9; color: #26bcc9; }
+.color-button.yellow { background-color: #e0cf14; color: #e0cf14; }
+.color-button.magenta { background-color: #FF00FF; color: #FF00FF; }
+.color-button.white { background-color: #FFFFFF; color: #FFFFFF; }
+
+/* Enhanced Arcade-style multi-layered shadow and border effect for 3D */
+.color-selection-form .color-button {
+    position: relative;
+    display: inline-block;
+    width: 30px; /* Maintain the original size */
+    height: 30px;
+    border: 0;
+    margin: 5px;
+    outline: none;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: box-shadow 200ms ease-in-out, background-color 200ms, transform 100ms ease-in-out;
+    box-shadow: 
+        inset 0 1px 0 lighten(currentColor, 15%),
+        inset 0 -2px 4px darken(currentColor, 20%),
+        inset 0 0 0 2px darken(currentColor, 8%),
+        inset 0 0 0 5px currentColor,
+        inset 0 12px 12px rgba(0, 0, 0, 0.5),
+        0 4px 8px rgba(0, 0, 0, 0.5),
+        0 8px 16px rgba(0, 0, 0, 0.4),
+        0 12px 24px rgba(0, 0, 0, 0.2);
+    background: radial-gradient(circle at 50% 40%, lighten(currentColor, 10%) 0%, currentColor 50%, darken(currentColor, 15%) 100%);
+}
+
+/* Inner pressable button with deeper indent effect */
+.color-selection-form .color-button::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: block;
+    width: 22px;
+    height: 22px;
+    border: 2px solid rgba(0, 0, 0, 0.3);
+    border-radius: 50%;
+    background-color: lighten(currentColor, 10%);
+    transition: transform 200ms ease-in-out, box-shadow 200ms ease-in-out;
+    box-shadow: 
+        inset 0 2px 2px rgba(255, 255, 255, 0.5),
+        inset 0 -4px 8px rgba(0, 0, 0, 0.6),
+        0 2px 4px rgba(0, 0, 0, 0.5),
+        0 6px 10px rgba(0, 0, 0, 0.4);
+}
+
+/* Hover effect with stronger depth */
+.color-selection-form .color-button:hover {
+    box-shadow: 
+        inset 0 3px 2px lighten(currentColor, 20%),
+        inset 0 -4px 6px darken(currentColor, 25%),
+        inset 0 0 0 2px darken(currentColor, 10%),
+        inset 0 0 0 6px currentColor,
+        0 5px 12px rgba(0, 0, 0, 0.6),
+        0 10px 20px rgba(0, 0, 0, 0.5);
+}
+
+/* Pressed state for the inner circle with zoom and deeper indent */
+.color-selection-form .color-button:active::after,
+.color-selection-form .color-button.selected::after {
+    transform: translate(-50%, -50%) scale(0.92);
+    box-shadow: 
+        inset 0 1px 3px rgba(0, 0, 0, 0.6),
+        inset 0 0 10px rgba(0, 0, 0, 0.8);
+    background-color: darken(currentColor, 8%);
+}
+
+
+
+
+
+/* Plus button styling */
+.upload-btn {
+    background-color: #00FF00;
+    color: black;
+    font-size: 24px;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    cursor: pointer;
+    margin-right: 10px;
+    border: 1px solid #00FF00;
+}
+.upload-btn:hover {
+    background-color: black;
+    color: #00FF00;
+}
+
+/* Comment form input and button */
+.comment-form {
+    display: flex;
+    align-items: center;
+}
+/* Styling for the text area to make it look like Typeform */
+.comment-form textarea {
+    background-color: black;
+    color: white;
+    font-family: 'Roboto Mono','Consolas', 'Courier New', Courier, monospace;    border: none;
+    resize: none;
+    padding: 3px 15px;
+    margin-right: 10px;
+    border-radius: 7px;
+    font-size: 16px; /* Set font size to be consistent with Typeform's style */
+    flex: 1; /* Take up the remaining space of the form */
+    min-height: 40px; /* Set a reasonable minimum height */
+    max-height: 150px; /* Set a maximum height to prevent overflow */
+    overflow-y: auto; /* Enable scrolling if the content exceeds the max height */
+}
+
+.comment-form textarea::placeholder {
+    font-size: 13px; /* Set the desired font size */
+    color: #999999; /* Optional: Change the color to something subtler if you like */
+    padding-top: 4px;
+
+}
+
+.comment-form input[type="submit"] {
+    background-color: black;
+    border: 1px solid #00FF00;
+    font-size: 15px;
+    color: #00FF00;
+    padding: 10px 20px;
+    cursor: pointer;
+    border-radius: 5px;
+}
+.comment-form input[type="submit"]:hover{
+    background-color:#00FF00;
+    color: black;
+}
+
+.comment p {
+    white-space: pre-wrap; /* Preserve line breaks and multiple spaces */
+}
+
+
+/* ========== MODAL STYLING ========== */
+.modal {
+    display: none; /* Hidden by default */
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.8); /* Dark background with opacity */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Container for media content */
+.media-content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: auto; /* Occupy 60% of the screen width */
+     /* Constrain height to 60% of the screen */
+}
+
+/* Image-specific styles */
+.media-content img {
+    max-width: 90%; /* Maintain aspect ratio */
+    max-height: 90vh; /* Constrain within container height */
+    object-fit: contain; /* Ensure media scales proportionally */
+    border: 1px solid #00FF00; /* Optional: Adding a border for differentiation */
+}
+
+/* Video-specific styles */
+.media-content video {
+    max-width: 90%;
+    max-height: 90vh; /* Maintain aspect ratio */
+    object-fit: contain; /* Ensure media scales proportionally */
+    border: 1px solid white; /* Optional: Ensure the video area is not white */
+}
+
+/* Navigation arrow styling */
+.arrow {
+    cursor: pointer;
+    padding: 20px;
+    color: white;
+    font-size: 30px;
+    z-index: 1001;
+    background-color: rgba(0, 0, 0, 0.4);
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    top: 50%; /* Center arrows vertically */
+    transform: translateY(-50%);
+}
+
+/* Positioning of navigation arrows */
+.arrow.left {
+    left: 15px;
+}
+.arrow.right {
+    right: 15px;
+}
+
+/* Hover effect for arrows */
+.arrow:hover {
+    background-color: rgba(0, 0, 0, 0.7); /* Darken on hover */
+}
