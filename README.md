@@ -13,6 +13,7 @@
 
 ## Directory Structure
 
+```plaintext
 Siqnode/
 ├── assets/
 │   ├── icon.png
@@ -33,7 +34,7 @@ Siqnode/
 ├── layout.php
 ├── login.php
 ├── logout.php
-
+```
 
 
 ## Directory & File Descriptions
